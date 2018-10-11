@@ -1,0 +1,25 @@
+{
+  "name": "nodeJs-Totorials",
+  "version": "1.0.0",
+  "description": "\\*\\* hello hello kiiiiiwiwiwiwiwi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon serverExpress.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hillal20/nodeJs-toturial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hillal20/nodeJs-toturial/issues"
+  },
+  "homepage": "https://github.com/hillal20/nodeJs-toturial#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  }
+}
