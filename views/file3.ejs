@@ -5,13 +5,36 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  <link rel="stylesheet" type="text/css" href="/assets/style.css" />
   <script src="main.js"></script>
 </head>
 
 <body>
   <h1>profile3</h1>
+  <p>
+    <strong>name:</strong>
+    <%= query.name %>
+  </p>
+
+  <p>
+    <strong>last name:</strong>
+    <%= query.lastname %>
+  </p>
+
+
+
+  <form method="POST" actions='/file3'>
+    <label for="who">who do you want to contact?</label>
+    <input type='text' name='name' value='<%= query.name %>'>
+    <label for="lastname">what is his last name?</label>
+    <input type='text' name='lastname' value='<%= query.lastname %>'>
+    <label for="email">what is his email?</label>
+    <input type='email' name='email'>
+    <input type="submit" value="submit">
+  </form>
+
+
 
 </body>
 

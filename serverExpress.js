@@ -1,12 +1,23 @@
 const express = require("express");
 const server = express();
+const bodyParser = require("body-parser");
 
+// server.use(bodyParser.json());
+const bp = bodyParser.urlencoded({ extended: false });
 ////// set view engine
 
 server.set("view engine", "ejs");
 
+server.use("/assets", express.static("public1"));
+
 server.get("/file3", (req, res) => {
-  res.render("file3"); /// file3 = file3.ejs = the view
+  console.log("===>", req.query);
+  res.render("file3", { query: req.query }); /// file3 = file3.ejs = the view
+});
+
+server.post("/file3", bp, (req, res) => {
+  console.log(" req.body ===>", req.body);
+  res.render("succes", { data: req.body }); /// file3 = file3.ejs = the view
 });
 
 server.get("/file4/:name", (req, res) => {
