@@ -11,10 +11,23 @@
 </head>
 
 <body>
-  <h1>profile4</h1>
-  <h2>the name:
-    <%= name %>
-  </h2>
+  <% include standar/nav.ejs %>
+    <h1>profile4</h1>
+    <h2>the name:
+      <%= name %>
+    </h2>
+    <p>
+      <strong>age:</strong>
+      <%= data.age %>
+    </p>
+    <h3>hobbies:</h3>
+    <ul>
+      <% data.hobbies.forEach((item)=>{%>
+        <li>
+          <%= item %>
+        </li>
+        <%})%>
+    </ul>
 </body>
 
 </html>

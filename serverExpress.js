@@ -10,7 +10,8 @@ server.get("/file3", (req, res) => {
 });
 
 server.get("/file4/:name", (req, res) => {
-  res.render("file4", { name: req.params.name });
+  const data = { age: 33, job: "ninja", hobbies: ["eating", "fishing"] };
+  res.render("file4", { name: req.params.name, data: data });
 });
 //////////////////////////////////
 
