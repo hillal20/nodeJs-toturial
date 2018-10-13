@@ -1,4 +1,4 @@
-///////////////  process.nextTick()
+/////////////  process.nextTick()
 
 function bill(str, cb) {
   process.nextTick(() => {
@@ -11,7 +11,7 @@ const res = bill("hilal aissani", x => {
 // console.log(res);
 console.log("end");
 
-//////////////////////   setTimeout /////////
+////////////////////   setTimeout /////////
 
 function delay(seconds, cb) {
   setTimeout(cb, seconds * 1000);
@@ -36,7 +36,7 @@ console.log("resoloved2");
 
 const delay2 = () => {
   return new Promise((resolves, rejects) => {
-    // throw new Error("xxxx");
+    //throw new Error("xxxx");
     resolves("result1");
   });
 };
@@ -52,8 +52,8 @@ console.log("result2");
 ///////////////////
 
 const delay3 = cb => {
-  cb(new Error("?????"), "r1");
-  // cb(null, "r1");
+  //cb(new Error("?????"), "r1");
+  cb(null, "r1");
 };
 
 delay3((err, msg) => {
