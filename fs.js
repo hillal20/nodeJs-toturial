@@ -2,12 +2,14 @@ const fs = require("fs");
 
 /////////////////////////////  sync version
 
-const file = fs.readFileSync("readme.md", "utf8");
-console.log(file);
-console.log("hilal");
+// const file = fs.readFileSync("readme.md", "utf8");
 
-fs.writeFileSync("writeme.md", file);
-console.log("hiiiiiiii");
+// console.log(file);
+// console.log("hilal");
+
+// fs.writeFileSync("writeme.md", file);
+
+// console.log("hiiiiiiii");
 
 ///////////////////////////////////  async does not block the code
 

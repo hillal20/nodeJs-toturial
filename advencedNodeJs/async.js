@@ -1,21 +1,21 @@
-// console.log("person1 ticket");
-// console.log("person2 ticket");
+console.log("p1 ticket");
+console.log("p2 ticket");
 
-// const promise = new Promise((resolves, rejects) => {
-//   resolves("ticket");
-// });
-// promise
-//   .then(msg => {
-//     console.log(`person3 ${msg}`);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+const promise1 = new Promise((resolves, rejects) => {
+  resolves("ticket");
+});
+promise1
+  .then(msg => {
+    console.log(`p3 ${msg}`);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
-// console.log("person4 ticket");
-// console.log("person5 ticket");
+console.log("p4 ticket");
+console.log("pe5 ticket");
 
-//////// async await
+//////// async await /////////////////////////////////////////////
 
 console.log("person1 ticket");
 console.log("person2 ticket");
@@ -42,3 +42,13 @@ asyncFunction().then(msg => {
 });
 console.log("person4 ticket");
 console.log("person5 ticket");
+/////////////////////////////////////////////////////
+
+const b = new Promise((resolve, reject) => {
+  resolve(() => {
+    console.log("hello");
+  });
+});
+b.then(msg => {
+  msg();
+});
