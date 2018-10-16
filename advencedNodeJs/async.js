@@ -13,7 +13,7 @@ promise1
   });
 
 console.log("p4 ticket");
-console.log("pe5 ticket");
+console.log("p5 ticket");
 
 //////// async await /////////////////////////////////////////////
 
@@ -42,7 +42,8 @@ asyncFunction().then(msg => {
 });
 console.log("person4 ticket");
 console.log("person5 ticket");
-/////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////
 
 const b = new Promise((resolve, reject) => {
   resolve(() => {
