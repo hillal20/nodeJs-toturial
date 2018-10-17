@@ -17,7 +17,6 @@ myReadStream.on("data", chunk => {
 });
 
 ///////////////
-
 myWriteStream.on("drain", () => {
   console.log("... drained ");
   myReadStream.resume();
