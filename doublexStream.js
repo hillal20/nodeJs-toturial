@@ -4,7 +4,7 @@ const { createReadStream, createWriteStream } = require("fs");
 const readStream = createReadStream("./vedio.mp4");
 const writeStream = createWriteStream("./cpy.mp4");
 
-const report = new PassThrough(); // doublex
+const report = new PassThrough(); // pass through stream does not change the data
 
 //////////////////////
 let total = 0;
