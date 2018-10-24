@@ -13,6 +13,10 @@ server.get("/", (req, res) => {
   res.send("api is running");
 });
 
+server.get("/home", (req, res) => {
+  res.render("home", { content: "this is some contents", condition: false });
+});
+
 server.listen(port, () => {
   console.log("=== server is running on 4000 ==");
 });
