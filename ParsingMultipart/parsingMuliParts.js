@@ -36,7 +36,6 @@ const resFn = async (req, res) => {
 };
 
 const server = createServer((req, res) => {
-  ////////////////////////////////// piping the form file to multiple writable streams
   if (req.method === "POST") {
     /////////// multiparty
     let form = new multiparty.Form();
@@ -48,11 +47,6 @@ const server = createServer((req, res) => {
     });
 
     form.parse(req);
-
-    /////////////////////
-    // req.pipe(res); // req is readable stream  , res is writable stream
-    // req.pipe(process.stdout);
-    // req.pipe(createWriteStream("./uploaded.txt"));
   }
   /////////////////////  piping the video to the browser
   else if (req.url === "/video") {

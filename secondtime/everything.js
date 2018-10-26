@@ -6,7 +6,7 @@ let promise = new Promise((resFn, rejFn) => {
   setTimeout(() => {
     resFn("== resoled == ");
   }, 3000);
-  // rejFn("error");
+  // rejFn("error");s
 });
 promise
   .then(msg => {
@@ -16,3 +16,5 @@ promise
     console.log(err);
   });
 console.log("1");
+
+/////////
