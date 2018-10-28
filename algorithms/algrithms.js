@@ -45,12 +45,12 @@ const quicksort = arr => {
 };
 quicksort([1, 2, 4, 3, 2, 21, 1, 1, 15, 2, 3, 4]);
 
-//////////// .  binarySearch
+//////////// .  binarySearch/////////////////
 let a = [1, 8, 4, 5, 9];
 
 //////////////////////////// . sorting arr
 
-function bs(l, h, arr, key) {
+function BS(l, h, arr, key) {
   let sArr = arr.sort((a, b) => {
     return a > b;
   });
@@ -66,9 +66,9 @@ function bs(l, h, arr, key) {
     if (sArr[middle] === key) {
       return true;
     } else if (key < sArr[middle]) {
-      return bs(l, middle - 1, sArr, key);
+      return BS(l, middle - 1, sArr, key);
     } else if (key > sArr[middle]) {
-      return bs(middle + 1, h, sArr, key);
+      return BS(middle + 1, h, sArr, key);
     }
     return false;
   }
