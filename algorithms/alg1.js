@@ -78,3 +78,29 @@ const merge = (left, right) => {
 };
 
 console.log(mergeSort(arr));
+
+/////// quick sort
+
+const arr = [1, 2, 3, 8, 3, 1, 9, 6, 7];
+const quicksort = arr => {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  let pivot = arr[arr.length - 1];
+  let right = [];
+  let left = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    }
+    if (arr[i] > pivot) {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quicksort(left), pivot, ...quicksort(right)];
+};
+
+console.log(quicksort(arr));
