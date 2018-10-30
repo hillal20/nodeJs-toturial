@@ -29,7 +29,7 @@ for (let l of lines) {
     value: value
   });
 }
-
+console.log("===> items1", items);
 //////////////////////////////////////// iterative ///////
 
 greedyAlo = (items, capacity) => {
@@ -47,7 +47,7 @@ greedyAlo = (items, capacity) => {
 
     return y - x;
   });
-  console.log(items);
+  console.log("==> items2", items);
 
   for (let i = 0; i < items.length; i++) {
     if (items[i].size <= capacity) {
@@ -63,3 +63,15 @@ greedyAlo = (items, capacity) => {
   return result;
 };
 greedyAlo(items, capacity);
+
+//////////////////////////////////////
+
+// let it;
+// let arr = [1, 2, 3, 4, 5, 6, 20, 80, 90];
+// total = 50;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] < total) it = arr[i];
+//   total -= it;
+// }
+
+// console.log(total);
