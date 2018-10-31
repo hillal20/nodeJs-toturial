@@ -41,11 +41,14 @@ console.log(obj);
 //   }
 //   total = 0;
 // }
-// console.log(res);
+// console.log(res.length);
 
 ///////////////////// real solution
 
 const numWays = data => {
+  if (data === "") {
+    return 0;
+  }
   let memo = Array(data.length - 1).fill(null);
 
   console.log(memo);
@@ -53,10 +56,11 @@ const numWays = data => {
 };
 
 const helper = (newData, k, memo) => {
-  console.log(newData);
-  console.log(k);
-  console.log(memo);
+  // console.log(newData);
+  // console.log(k);
+  // console.log(memo);
   //////////////////////////////
+
   if (k === 0) {
     /// first base case data = ''
     return 1;
@@ -65,8 +69,8 @@ const helper = (newData, k, memo) => {
   //// second base case data = '011"
   let s;
   s = newData.length - k;
-  console.log(s);
-  console.log("parseint", parseInt(newData[s] + newData[s + 1]));
+  // console.log(s);
+  // console.log("parseint", parseInt(newData[s] + newData[s + 1]));
 
   if (newData[s] === "0") {
     return 0;
@@ -77,8 +81,9 @@ const helper = (newData, k, memo) => {
   }
 
   let result = 0;
-  console.log("result", result);
-  result =
+  //
+
+  result +=
     helper(newData, k - 1, memo) +
     (k >= 2 &&
       parseInt(newData[s] + newData[s + 1]) <= 26 &&
@@ -87,9 +92,10 @@ const helper = (newData, k, memo) => {
   result +=
     parseInt(newData[s] + newData[s + 1]) > 26 &&
     (result += helper(newData, k - 1, memo));
+
   memo[k] = result;
 
   return result;
 };
-let d = "273467";
+let d = "1111";
 console.log(numWays(d));
