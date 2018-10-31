@@ -71,20 +71,25 @@ const helper = (newData, k, memo) => {
   if (newData[s] === "0") {
     return 0;
   }
-  if (memo[k] !== null) {
+
+  if (memo[k] !== null && memo[k] !== undefined) {
     return memo[k];
   }
 
   let result = 0;
+  console.log("result", result);
   result =
     helper(newData, k - 1, memo) +
     (k >= 2 &&
       parseInt(newData[s] + newData[s + 1]) <= 26 &&
       (result += helper(newData, k - 2, memo)));
 
+  result +=
+    parseInt(newData[s] + newData[s + 1]) > 26 &&
+    (result += helper(newData, k - 1, memo));
   memo[k] = result;
-  console.log("result", result);
+
   return result;
 };
-let d = "123467";
+let d = "273467";
 console.log(numWays(d));
