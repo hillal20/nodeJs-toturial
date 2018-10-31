@@ -38,12 +38,32 @@ class Heap {
   siftDown(index) {
   const leftChildIndex = 2*index +1;
   const rightChildIndex = 2*index + 2;
-  const maxIndex = this.storage[leftChildIndex] > this.storage[rightChildIndex]? leftChildIndex : rightChildIndex;
+  const maxIndex;
+  if(this.storage[leftChildIndex] && this.storage[rightChildIndex]){
+
+maxIndex = this.storage[leftChildIndex] > this.storage[rightChildIndex]? leftChildIndex : rightChildIndex;
   if( this.storage[index] <  this.storage[maxIndex]){
     [this.storage[maxIndex], this.storage[index]] = [this.storage[index],this.storage[maxIndex] ]
     this.siftDown(maxIndex)
   }
    
+  }
+if(this.storage[rightChildIndex]){
+  if(this.storage[index] < this.storage[rightChildIndex]){
+    maxIndex = rightChildIndex;
+    [this.storage[maxIndex], this.storage[index]] = [this.storage[index],this.storage[maxIndex] ]
+    this.siftDown(maxIndex)
+  }
+
+}
+if(this.storage[leftChildIndex]){
+  if(this.storage[index] < this.storage[leftChildIndex]){
+    maxIndex = leftChildIndex;
+    [this.storage[maxIndex], this.storage[index]] = [this.storage[index],this.storage[maxIndex] ]
+    this.siftDown(maxIndex)
+  }
+
+}
 
   }
 }
