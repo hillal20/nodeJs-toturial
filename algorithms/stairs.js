@@ -14,3 +14,19 @@ const fn = n => {
 };
 
 console.log(fn(numOfStairs));
+
+let arr = [1, 2, 3, 4, 10, 4, 5, 9, 8, 9, 30.13, 20];
+let num = 20;
+let obj = {};
+let res;
+result = [];
+
+for (let i = 0; i < arr.length; i++) {
+  res = num / arr[i];
+  obj[i] = true;
+  if (obj.hasOwnProperty(res)) {
+    result.push(res, arr[i]);
+    break;
+  }
+}
+console.log(result);
