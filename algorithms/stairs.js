@@ -58,24 +58,18 @@
 // console.log(Math.min(result));
 // let j;
 
-// arr = [1, 2, 3, 4, 5, 6, 9];
+arr = [1, 2, 3, 4, 5, 6, 9];
+
 // let temp;
-// let obj = {};
 
-// for (let i = 0; i < arr.length; i++) {
-//   j = Math.floor(Math.random() * 10) < arr.length ? j : i;
-//   console.log(j);
-//   obj[j] = true;
-//   if (!obj.hasOwnProperty(j)) {
-//     [arr[j], arr[i]] = [arr[i], arr[j]];
-//   }
-// }
-// console.log(obj);
-// console.log(arr);
-
-const obj = {};
-let arr = [1, 2, 3, 1, 1, 3, 4];
 for (let i = 0; i < arr.length; i++) {
-  obj[arr[i]] = true;
+  j = Math.floor(Math.random() * 10);
+
+  [arr[j], arr[i]] = [arr[i], arr[j]];
 }
-console.log(obj);
+
+console.log(
+  arr.filter(a => {
+    return a !== undefined;
+  })
+);
