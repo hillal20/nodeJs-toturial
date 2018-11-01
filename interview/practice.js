@@ -3,14 +3,14 @@ const http = require("http");
 const util = require("util");
 const event = require("events");
 
-// fs.readFile("file1.txt", "utf8", (err, data) => {
-//   console.log(data);
+fs.readFile("file1.txt", "utf8", (err, data) => {
+  console.log(data);
 
-//   ///////
-//   fs.writeFile("file2.txt", data, () => {
-//     console.log("===> done ");
-//   });
-// });
+  ///////
+  fs.writeFile("file5.txt", data, () => {
+    console.log("===> done ");
+  });
+});
 // //////////////////////////
 
 // const file = fs.readFileSync("file1.txt", "utf8");
