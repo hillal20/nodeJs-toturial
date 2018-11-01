@@ -3,31 +3,32 @@ const http = require("http");
 const util = require("util");
 const event = require("events");
 
-fs.readFile("file1.txt", "utf8", (err, data) => {
-  console.log(data);
+// fs.readFile("file1.txt", "utf8", (err, data) => {
+//   console.log(data);
 
-  ///////
-  fs.writeFile("file5.txt", data, () => {
-    console.log("===> done ");
-  });
-});
+//   ///////
+//   fs.writeFile("file5.txt", data, () => {
+//     console.log("===> done ");
+//   });
+// });
 // //////////////////////////
 
 // const file = fs.readFileSync("file1.txt", "utf8");
-// fs.writeFileSync("file3.txt", file);
+// console.log("file==> ", file);
+// fs.writeFileSync("file6.txt", file);
 
 //####################################################
 //###################################################
 
-// const server = http.createServer((req, res) => {
-//   if (req.url === "/") {
-//     res.write("api is running ");
-//     res.end();
-//   }
-// });
-// server.listen(7000, () => {
-//   console.log(" server is running on port 3000 ");
-// });
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.write("api is running ");
+    res.end("api is runing as well");
+  }
+});
+server.listen(7000, () => {
+  console.log(" server is running on port 3000 ");
+});
 
 //######################################################
 //######################################################
@@ -78,10 +79,10 @@ fs.readFile("file1.txt", "utf8", (err, data) => {
 
 //#########################################
 
-const readStream = fs.createReadStream(__dirname + "/file1.txt", "utf8");
-const writeStream = fs.createWriteStream(__dirname + "/file4.txt");
+// const readStream = fs.createReadStream(__dirname + "/file1.txt", "utf8");
+// const writeStream = fs.createWriteStream(__dirname + "/file4.txt");
 
-readStream.on("data", chunk => {
-  console.log(chunk);
-  writeStream.write(chunk);
-});
+// readStream.on("data", chunk => {
+//   console.log(chunk);
+//   writeStream.write(chunk);
+// });
