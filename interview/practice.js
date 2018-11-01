@@ -20,35 +20,35 @@ const event = require("events");
 //####################################################
 //###################################################
 
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    res.write("api is running ");
-    res.end("api is runing as well");
-  }
-});
-server.listen(7000, () => {
-  console.log(" server is running on port 3000 ");
-});
-
-//######################################################
-//######################################################
-
-// class Person {
-//   constructor(name) {
-//     this.name = name;
+// const server = http.createServer((req, res) => {
+//   if (req.url === "/") {
+//     res.write("api is running ");
+//     res.end("api is runing as well");
 //   }
-// }
-
-// util.inherits(Person, event.EventEmitter);
-
-// const hilal = new Person("hilal");
-
-// hilal.on("send", (arg, status) => {
-//   console.log(arg.msg);
-//   console.log(status);
+// });
+// server.listen(7000, () => {
+//   console.log(" server is running on port 3000 ");
 // });
 
-// hilal.emit("send", { msg: "hello hilal =====" }, 200);
+//######################################################
+//######################################################
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+util.inherits(Person, event.EventEmitter);
+
+const hilal = new Person("hilal");
+
+hilal.on("send", (arg, status) => {
+  console.log(arg);
+  console.log(status);
+});
+
+hilal.emit("send", { msg: "hello hilal =====" }, 200);
 
 //////////////////////////////////////////
 // class Bill extends event {
