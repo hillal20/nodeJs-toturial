@@ -7,30 +7,33 @@ let cChar;
 let current = "";
 let count = 0;
 let loopIndex = 0;
+let arrLoopIndex = [];
 for (let i = 0; i < str.length; i++) {
-  if (count > 0 && i < loopIndex) {
-    continue;
-  }
-
   if (!isNaN(parseInt(str[i]))) {
     cIndex = i;
 
     while (true) {
-      cChar = str[cIndex++];
+      cChar = str[cIndex];
       if (!isNaN(parseInt(cChar))) {
+        cChar = str[cIndex++];
         count++;
         current += cChar;
         loopIndex += cIndex + count;
-      }
+      } else {
+        newArr.push(current);
 
-      newArr.push(current);
-      if (isNaN(parseInt(cChar))) {
         count = 0;
         current = "";
         cIndex = 0;
+
         break;
       }
-    }
-  } // if
+    } // while loop
+  }
+
+  // loopIndex = 0;
+  i++;
+  // if
 } // for loop
 console.log(newArr);
+console.log(arrLoopIndex);
