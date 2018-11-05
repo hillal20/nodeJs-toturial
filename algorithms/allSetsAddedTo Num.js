@@ -37,26 +37,22 @@ function rec(arr, total, i) {
   }
 }
 countSet(arr, 3);
+////////////////////////////////// all combinations
 
-// let b = [1,2,3] // ['1','3','4','13','14','34','134']
+let b = [1, 2, 3]; // ['1','3','4','13','14','34','134']
 
-// function possible(arr){
+function possible(arr) {
+  let result = [];
+  let combination;
+  function helper(str, newArr) {
+    for (let i = 0; i < newArr.length; i++) {
+      combination = str + newArr[i]; //  1  12  13  123   2  23  3  //
+      result.push(combination);
+      helper(combination, newArr.slice(i + 1));
+    }
+  }
+  helper("", arr);
 
-//   let result = []
-//   let combination;
-// function helper(str,newArr){
-
-//       for(let i = 0; i < newArr.length; i++){
-
-//         combination = str + newArr[i]      //  1  12  13  123   2  23  3  //
-//       result.push(combination)
-//        helper(combination, newArr.slice(i+1))
-//       }
-
-//   }
-//   helper('',arr)
-
-//  return result
-
-// }
-// possible(b)
+  return result;
+}
+possible(b);
