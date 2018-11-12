@@ -10,6 +10,8 @@
 // node --v8-options | grep "in progress"
 
 const repl = require("repl");
+const { config } = require("./util.js");
+
 // repl.start({
 //   ignoreUndefined: true,
 //   replMode: repl.REPL_MODE_STRICT
@@ -17,10 +19,25 @@ const repl = require("repl");
 
 //  =====> we can control repl global context
 
-const replGlobal = repl.start({
-  ignoreUndefined: true,
-  replMode: repl.REPL_MODE_STRICT
-});
+// const replGlobal = repl.start({
+//   ignoreUndefined: true,
+//   replMode: repl.REPL_MODE_STRICT
+// });
 
-replGlobal.context.lodash = require("lodash");
-console.log(replGlobal);
+// replGlobal.context.lodash = require("lodash");
+// console.log(replGlobal);
+
+// =====> global object
+
+// console.log(global.process);
+// console.log(global.Buffer);
+
+// console.log(config.port);
+// console.log(process.release.lts);
+
+// ===> process
+
+process.on("exit", () => {
+  console.log("exiting.....");
+});
+process.on("uncaughtException", err => {});
