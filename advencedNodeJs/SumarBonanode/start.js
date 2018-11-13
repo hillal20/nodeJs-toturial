@@ -63,23 +63,39 @@ const { config } = require("./util.js");
 // console.log("buffer==>", buffer, buffer.length);
 
 // example
-const fs = require("fs");
+// const fs = require("fs");
 
-const conversionMap = {
-  "88": "65",
-  "89": "66",
-  "90": "67"
-};
+// const conversionMap = {
+//   "88": "65",
+//   "89": "66",
+//   "90": "67"
+// };
 
-fs.readFile(__filename, (err, data) => {
-  console.log(data);
-  let tag = data.slice(-9, -1);
-  console.log(tag);
+// fs.readFile(__filename, (err, data) => {
+//   console.log(data);
+//   let tag = data.slice(-9, -1);
+//   console.log(tag);
 
-  for (let i = 0; i < tag.length; i++) {
-    tag[i] = conversionMap[tag[i]];
-    console.log(data.toString());
-    console.log(tag.toString());
+//   for (let i = 0; i < tag.length; i++) {
+//     tag[i] = conversionMap[tag[i]];
+//     console.log(data.toString());
+
+//   }
+// });
+// // tag : xyz
+
+//=====> string_decoder
+
+const { StringDecoder } = require("string_decoder");
+const decoder = new StringDecoder("utf8");
+
+process.stdin.on("readable", () => {
+  const chunk = process.stdin.read();
+  console.log("chunk===> ", chunk.toString());
+
+  if (chunk != null) {
+    const buffer = Buffer.from([chunk]);
+    console.log(buffer.toString());
+    console.log(decoder.write(buffer));
   }
 });
-// tag : xyz
