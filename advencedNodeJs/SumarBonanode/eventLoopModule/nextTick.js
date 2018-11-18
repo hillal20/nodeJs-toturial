@@ -3,7 +3,7 @@ const fs = require("fs");
 const fileSizeFn = (fileName, cb) => {
   if (typeof fileName !== "string") {
     return process.nextTick(cb, new Error("==>filename is not string"), null);
-    //return process.nextTick(cb, new Error("==>filename is not string"), null);
+    //return cb(new Error("err ==> filename is not string"), null);
   }
   fs.stat(fileName, (err, stats) => {
     if (err) {
@@ -15,7 +15,7 @@ const fileSizeFn = (fileName, cb) => {
 
 fileSizeFn(1, (err, size) => {
   if (err) {
-    throw err;
+    return console.log(err.message);
   }
   console.log("====>size", size);
 });
