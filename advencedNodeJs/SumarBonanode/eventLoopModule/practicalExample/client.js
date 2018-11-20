@@ -7,3 +7,11 @@ const rl = readline.createInterface({
 });
 const client = new event();
 const server = require("./server")(client);
+server.on("response", resp => {
+  console.log(`resp ===>', ${resp}`);
+});
+
+rl.on("line", input => {
+  client.emit("command", input);
+  //console.log("input ===>:", input);
+});
