@@ -20,6 +20,10 @@ server.on("connection", socket => {
       connectedSocket.write(data);
     });
   });
+  socket.on("end", () => {
+    delete connectedSockets[socket.id];
+    console.log("==> client is disconnected");
+  });
   socket.setEncoding("utf8");
 });
 
