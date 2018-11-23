@@ -1,0 +1,11 @@
+const os = require("os");
+console.log(os.freemem());
+console.log(os.type());
+console.log(os.userInfo());
+console.log(os.hostname());
+console.log(os.tmpdir());
+console.log(os.cpus());
+console.log(os.endianness());
+console.log(os.loadavg());
+console.log(os.constants.errno);
+console.log(os.constants.signals);
