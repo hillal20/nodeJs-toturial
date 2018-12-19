@@ -33,22 +33,22 @@ const event = require("events");
 //######################################################
 //######################################################
 
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-}
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
 
-util.inherits(Person, event.EventEmitter);
+// util.inherits(Person, event.EventEmitter);
 
-const hilal = new Person("hilal");
+// const hilal = new Person("hilal");
 
-hilal.on("send", (arg, status) => {
-  console.log(arg);
-  console.log(status);
-});
+// hilal.on("send", (arg, status) => {
+//   console.log(arg);
+//   console.log(status);
+// });
 
-hilal.emit("send", { msg: "hello hilal =====" }, 200);
+// hilal.emit("send", { msg: "hello hilal =====" }, 200);
 
 //////////////////////////////////////////
 // class Bill extends event {
@@ -60,9 +60,9 @@ hilal.emit("send", { msg: "hello hilal =====" }, 200);
 //   }
 // }
 
-// const bill = new Bill();
+// const hilal = new Bill();
 
-// bill.on("hola", (arg, status) => {
+// hilal.on("hola", (arg, status) => {
 //   console.log(arg.msg);
 //   console.log(status);
 // });
@@ -72,17 +72,20 @@ hilal.emit("send", { msg: "hello hilal =====" }, 200);
 // ####################################################################
 // ####################################################################
 
-//  fs.mkdirSync("stuf1");
-// fs.mkdir("stuf2", err => {
+// fs.mkdirSync("stuf3");
+
+// fs.mkdir("stuf4", err => {
 //   console.log("done");
 // });
 
 //#########################################
 
-// const readStream = fs.createReadStream(__dirname + "/file1.txt", "utf8");
-// const writeStream = fs.createWriteStream(__dirname + "/file4.txt");
+const readStream = fs.createReadStream(__dirname + "/file1.txt", "utf8");
+const writeStream = fs.createWriteStream(__dirname + "/file8.txt");
 
 // readStream.on("data", chunk => {
 //   console.log(chunk);
 //   writeStream.write(chunk);
 // });
+
+readStream.pipe(writeStream);

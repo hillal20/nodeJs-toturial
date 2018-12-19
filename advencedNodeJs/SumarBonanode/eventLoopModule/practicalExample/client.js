@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 const client = new event();
 const server = require("./server")(client);
 server.on("response", resp => {
-  console.log(`resp ===>', ${resp}`);
+  console.log(`resp ===>, ${resp}`);
 });
 
 rl.on("line", input => {
