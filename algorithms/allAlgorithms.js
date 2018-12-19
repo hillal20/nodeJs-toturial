@@ -461,3 +461,32 @@ function quickSort(arr) {
   return [...quickSort(left), pivote, ...quickSort(right)];
 }
 quickSort(arr);
+
+let a = [1, 3, 4, 7, 9];
+let b = [2, 5, 6, 10, 14, 18];
+
+function Merge(a, b, n, m) {
+  let c = [];
+  let i = 0;
+  let j = 0;
+  let k = 0;
+
+  while (i < n && j < m) {
+    if (a[i] < b[j]) {
+      c[k++] = a[i++];
+    } else {
+      c[k++] = b[j++];
+    }
+  }
+
+  for (; i < n; i++) {
+    c[k++] = a[i];
+  }
+
+  for (; j < m; j++) {
+    c[k++] = b[j];
+  }
+
+  return c;
+}
+console.log(Merge(a, b, a.length, b.length));
