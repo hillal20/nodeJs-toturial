@@ -511,3 +511,24 @@ function quickSort(arr) {
   return [...quickSort(left), pivote, ...quickSort(right)];
 }
 quickSort(arr);
+let arr = [100, 1, 50, 2, 3, 4, 7, 2, 10, 5, 2, 1, 20, 13];
+
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  let pivote = arr[arr.length - 1];
+  let right = [];
+  let left = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivote) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quickSort(left), pivote, ...quickSort(right)];
+}
+quickSort(arr);
