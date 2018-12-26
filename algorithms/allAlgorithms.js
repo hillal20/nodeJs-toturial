@@ -569,3 +569,51 @@ root.insertRight(11);
 console.log("root ===>", root);
 
 console.log(checkBalanced(root)); // should print true;
+//////////////////////
+
+const mergeSort = arr => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  const middle = Math.floor(arr.length / 2);
+
+  const right = arr.slice(0, middle);
+  const left = arr.slice(middle, arr.length);
+  return merge(mergeSort(left), mergeSort(right));
+};
+
+const merge = (left, right) => {
+  const result = [];
+
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
+    }
+  }
+
+  return result.concat(left, right);
+};
+mergeSort([1, 2, 3, 9, 3, 2, 9, 4, 8, 5]);
+
+////////////////////////////////// quicksort
+
+const quicksort = arr => {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const pivote = arr[arr.length - 1];
+  const right = [];
+  const left = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivote) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quicksort(left), pivote, ...quicksort(right)];
+};
+quicksort([1, 2, 4, 3, 2, 21, 1, 1, 15, 2, 3, 4]);
