@@ -617,41 +617,28 @@ const quicksort = arr => {
   return [...quicksort(left), pivote, ...quicksort(right)];
 };
 quicksort([1, 2, 4, 3, 2, 21, 1, 1, 15, 2, 3, 4]);
-let a = [1,8,4,5,9]
+let a = [1, 8, 4, 5, 9];
 
+function bs(l, h, arr, key) {
+  let sArr = arr.sort((a, b) => {
+    return a > b;
+  });
 
-function bs(l,h,arr,key){
-  let sArr = arr.sort((a,b)=>{
-    return a > b
-  })
-  
+  let middle = Math.floor(l + h + 1 / 2);
 
- let  middle = Math.floor((l+h+1/2))
-
-
- if( l === h ){
-    if (sArr[l] === key){
-      return true
+  if (l === h) {
+    if (sArr[l] === key) {
+      return true;
     }
-    
- }
- else {
-   
-     if (sArr[middle]=== key){
-       return true
-     }
-     else if (key < sArr[middle]){
-           return bs(l, middle-1,sArr,key)
-     }
-     else if (key > sArr[middle]){
-       return bs(middle + 1, h ,sArr,key)
-     }
-    return false
- }
-
-
+  } else {
+    if (sArr[middle] === key) {
+      return true;
+    } else if (key < sArr[middle]) {
+      return bs(l, middle - 1, sArr, key);
+    } else if (key > sArr[middle]) {
+      return bs(middle + 1, h, sArr, key);
+    }
+    return false;
+  }
 }
-console.log(bs(0,a.length-1,a,8))
- @hillal20
-   
- 
+console.log(bs(0, a.length - 1, a, 8));
