@@ -628,14 +628,14 @@ const mergeSort = arr => {
   return merge(mergeSort(left), mergeSort(right));
 };
 
-const merge = (left, right) => {
+const merge = (leftArr, rightArr) => {
   const result = [];
 
-  while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift());
+  while (leftArr.length && rightArr.length) {
+    if (leftArr[0] <= rightArr[0]) {
+      result.push(leftArr.shift());
     } else {
-      result.push(right.shift());
+      result.push(rightArr.shift());
     }
   }
 
