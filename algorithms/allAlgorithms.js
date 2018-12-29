@@ -640,6 +640,6 @@ const merge = (leftArr, rightArr) => {
     }
   }
 
-  return [...result, ...left, ...right];
+  return [...result, ...leftArr, ...rightArr];
 };
 mergeSort([1, 2, 3, 9, 3, 2, 9, 4, 8, 5]);
