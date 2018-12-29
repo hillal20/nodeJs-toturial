@@ -617,7 +617,8 @@ function bs(l, h, arr, key) {
 }
 console.log(bs(0, a.length - 1, a, 8));
 ///////
-const mergeSort = arr => {
+
+const splitToOneElement = arr => {
   if (arr.length < 2) {
     return arr;
   }
@@ -625,7 +626,7 @@ const mergeSort = arr => {
 
   const right = arr.slice(0, middle);
   const left = arr.slice(middle, arr.length);
-  return merge(mergeSort(left), mergeSort(right));
+  return merge(splitToOneElement(left), splitToOneElement(right));
 };
 
 const merge = (leftArr, rightArr) => {
