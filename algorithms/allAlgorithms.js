@@ -639,6 +639,6 @@ const merge = (left, right) => {
     }
   }
 
-  return result.concat(left, right);
+  return [...result, ...left, ...right];
 };
 mergeSort([1, 2, 3, 9, 3, 2, 9, 4, 8, 5]);
