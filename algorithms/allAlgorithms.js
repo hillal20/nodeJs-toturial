@@ -572,7 +572,24 @@ const merge = (left, right) => {
 mergeSort([1, 2, 3, 9, 3, 2, 9, 4, 8, 5]);
 
 ////////////////////////////////// quicksort
+const quicksort = arr => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  const pivote = arr[arr.length - 1];
+  const right = [];
+  const left = [];
 
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivote) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quicksort(left), pivote, ...quicksort(right)];
+};
+quicksort([1, 2, 6, 2, 8, 3, 9, 4, 2, 5, 8]);
 ///////////////////////////////////
 let a = [1, 8, 4, 5, 9];
 
