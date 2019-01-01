@@ -642,29 +642,3 @@ function bs(l, h, arr, key) {
 }
 console.log(bs(0, a.length - 1, a, 8));
 ///////
-
-const splitToOneElement = arr => {
-  if (arr.length < 2) {
-    return arr;
-  }
-  const middle = Math.floor(arr.length / 2);
-
-  const right = arr.slice(0, middle);
-  const left = arr.slice(middle, arr.length);
-  return merge(splitToOneElement(left), splitToOneElement(right));
-};
-
-const merge = (leftArr, rightArr) => {
-  const result = [];
-
-  while (leftArr.length && rightArr.length) {
-    if (leftArr[0] <= rightArr[0]) {
-      result.push(leftArr.shift());
-    } else {
-      result.push(rightArr.shift());
-    }
-  }
-
-  return [...result, ...leftArr, ...rightArr];
-};
-mergeSort([1, 2, 3, 9, 3, 2, 9, 4, 8, 5]);
