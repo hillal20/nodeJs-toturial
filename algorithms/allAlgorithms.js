@@ -591,30 +591,7 @@ const quicksort = arr => {
 };
 quicksort([1, 2, 6, 2, 8, 3, 9, 4, 2, 5, 8]);
 /////////////////////////////////// mergeSort
-const splitToOneElement = arr => {
-  if (arr.length < 2) {
-    return arr;
-  }
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle, arr.length);
 
-  return merge(splitToOneElement(left), splitToOneElement(right));
-};
-const merge = (left, right) => {
-  const result = [];
-
-  while (left.length && right.length) {
-    if (left[0] < right[0]) {
-      result.push(left.shift());
-    } else {
-      result.push(right.shift());
-    }
-  }
-  return [...result, ...left, ...right];
-};
-
-splitToOneElement([1, 2, 6, 2, 8, 3, 9, 4, 2, 5, 8]);
 ////////////////
 let a = [1, 8, 4, 5, 9];
 
