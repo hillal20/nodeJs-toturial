@@ -29,7 +29,24 @@ const merge = (left, right) => {
 splitToOneElement([1, 2, 6, 2, 8, 3, 9, 4, 2, 5, 8]);
 
 //////////////////////
+const quicksort = arr => {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const pivote = arr[arr.length - 1];
+  const right = [];
+  const left = [];
 
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivote) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quicksort(left), pivote, ...quicksort(right)];
+};
+quicksort([1, 2, 4, 3, 2, 21, 1, 1, 15, 2, 3, 4]);
 //////////// .  binarySearch
 let a = [1, 8, 4, 5, 9];
 
