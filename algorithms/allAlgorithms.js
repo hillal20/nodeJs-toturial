@@ -1,3 +1,17 @@
+let b = [1, 2, 9, 8, 6, 7, 1, 8, 3];
+
+const bubbleSort = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (arr[j] > arr[i]) {
+        [arr[j], arr[i]] = [arr[i], arr[j]];
+      }
+    }
+  }
+  return arr;
+};
+bubbleSort(b);
+
 ////////////////////////////////// quicksort
 
 //
