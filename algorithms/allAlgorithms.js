@@ -661,3 +661,19 @@ function bs(l, h, arr, key) {
 }
 console.log(bs(0, a.length - 1, a, 8));
 ///////
+const a = [0, 4, 2, 3, 9, 8, 7, 1, 5];
+
+const insertionSort = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j <= i; j++) {
+      if (arr[i] < arr[j]) {
+        arr.splice(j - 1, 0, arr.splice(i, 1)[0]);
+      }
+      if (arr[j - 1] > arr[j]) {
+        [arr[j - 1], arr[j]] = [arr[j], arr[j - 1]];
+      }
+    }
+  }
+  return arr;
+};
+insertionSort(a);
